@@ -111,13 +111,13 @@ export const education = [
     skills: ["GCP", "Requirements Gathering", "ML", "Business Intelligence"],
   },
   {
-    degree: "Bachelor of Technology – Mechanical Engineering (Smart Manufacturing)",
-    school: "IIITDM Kancheepuram",
-    subtitle: "Indian Institute of Information Technology Design & Manufacturing",
-    location: "Kancheepuram, India",
-    logo: "IIITDM",
+    degree: "Bachelor of Technology – Engineering",
+    school: "IIIT Chennai",
+    subtitle: "Indian Institute of Information Technology",
+    location: "Chennai, India",
+    logo: "IIIT",
     color: "#1a56db",
-    skills: ["Python", "MATLAB", "Machine Learning", "Smart Manufacturing", "Research"],
+    skills: ["Python", "MATLAB", "Machine Learning", "Research"],
   },
 ];
 

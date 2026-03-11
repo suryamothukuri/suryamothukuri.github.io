@@ -83,7 +83,7 @@ export default function About() {
               variants={fadeUp}
               className="text-text-secondary leading-relaxed mb-8"
             >
-              With a background spanning Mechanical Engineering (B.Tech from IIITDM Kancheepuram) to
+              With a background spanning Engineering (B.Tech from IIIT Chennai) to
               Information Systems (MS from University of Maryland — Smith School of Business), I bring
               a rare blend of engineering rigor and business context to every data problem.
             </motion.p>

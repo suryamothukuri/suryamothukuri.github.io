@@ -413,7 +413,7 @@ export default function Hero() {
           />
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse relative z-10" />
           <span className="relative z-10">
-            {'{ status: "open_to_hire", roles: ["DS", "AI Eng", "MLE"] }'}
+            {'{ status: "open_to_hire", roles: ["DS", "DE", "AI Eng"] }'}
           </span>
         </motion.div>
 

@@ -132,7 +132,7 @@ export default function Contact() {
             <span className="text-sm text-white/80 font-mono">
               status: <span className="text-accent font-semibold">&quot;open_to_hire&quot;</span>
               <span className="text-white/40 mx-2">·</span>
-              <span className="text-white/50">DS · AI Eng · MLE</span>
+              <span className="text-white/50">DS · DE · AI Eng</span>
             </span>
           </motion.div>
         </div>
