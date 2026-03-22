@@ -18,8 +18,8 @@ export default function Experience() {
           className="flex items-center gap-4 mb-16"
         >
           <span className="font-mono text-accent text-sm tracking-widest">02.</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Experience</h2>
-          <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent ml-4" />
+          <h2 className="text-3xl md:text-4xl font-bold theme-text">Experience</h2>
+          <div className="flex-1 h-px bg-gradient-to-r from-[rgba(var(--accent-rgb),0.22)] to-transparent ml-4" />
         </motion.div>
 
         {/* Timeline */}
@@ -29,7 +29,7 @@ export default function Experience() {
             initial={{ scaleY: 0 }}
             animate={inView ? { scaleY: 1 } : {}}
             transition={{ duration: 1.2, ease: "easeInOut" }}
-            className="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-accent/60 via-accent-purple/40 to-transparent origin-top"
+            className="absolute left-4 md:left-8 top-0 bottom-0 w-px origin-top experience-line"
           />
 
           <div className="space-y-10">
@@ -43,15 +43,26 @@ export default function Experience() {
               >
                 {/* Timeline dot */}
                 <div className="absolute left-0 md:left-4 top-1 flex items-center justify-center">
-                  <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center z-10 ${
-                    exp.current
-                      ? "border-accent bg-accent/20 animate-pulse-glow"
-                      : "border-white/20 bg-surface"
-                  }`}>
+                  <div
+                    className="w-8 h-8 rounded-full border-2 flex items-center justify-center z-10"
+                    style={
+                      exp.current
+                        ? {
+                            borderColor: "rgba(var(--accent-rgb), 0.9)",
+                            background: "rgba(var(--accent-rgb), 0.16)",
+                            boxShadow:
+                              "0 0 0 10px rgba(var(--accent-rgb), 0.05), 0 0 28px rgba(var(--accent-rgb), 0.12)",
+                          }
+                        : undefined
+                    }
+                  >
                     {exp.current ? (
-                      <span className="w-2.5 h-2.5 rounded-full bg-accent" />
+                      <span
+                        className="w-2.5 h-2.5 rounded-full"
+                        style={{ background: "rgb(var(--accent-rgb))" }}
+                      />
                     ) : (
-                      <span className="w-2 h-2 rounded-full bg-white/30" />
+                      <span className="w-2 h-2 rounded-full theme-bg-soft" />
                     )}
                   </div>
                 </div>
@@ -61,23 +72,32 @@ export default function Experience() {
                   <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
                     <div>
                       <div className="flex items-center gap-3 flex-wrap">
-                        <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors">
+                        <h3 className="text-xl font-bold theme-text experience-title-hover transition-colors">
                           {exp.title}
                         </h3>
                         {exp.current && (
-                          <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-accent/15 text-accent border border-accent/30">
+                          <span
+                            className="text-xs font-mono px-2 py-0.5 rounded-full"
+                            style={{
+                              background: "rgba(var(--accent-rgb), 0.12)",
+                              color: "rgb(var(--accent-rgb))",
+                              border: "1px solid rgba(var(--accent-rgb), 0.28)",
+                            }}
+                          >
                             Current
                           </span>
                         )}
                       </div>
-                      <p className="text-accent/80 font-medium mt-1">{exp.company}</p>
-                      <p className="text-text-secondary text-sm mt-1">
-                        {exp.type} · {exp.location}
+                      <p
+                        className="font-medium mt-1"
+                        style={{ color: "rgba(var(--accent-rgb), 0.82)" }}
+                      >
+                        {exp.company}
                       </p>
+                      <p className="text-text-secondary text-sm mt-1">{exp.location}</p>
                     </div>
                     <div className="text-right">
                       <div className="text-text-secondary text-sm font-mono">{exp.period}</div>
-                      <div className="text-white/40 text-xs mt-1">{exp.duration}</div>
                     </div>
                   </div>
 
@@ -89,9 +109,11 @@ export default function Experience() {
                           initial={{ opacity: 0, x: -10 }}
                           animate={inView ? { opacity: 1, x: 0 } : {}}
                           transition={{ delay: 0.4 + i * 0.15 + bi * 0.05 }}
-                          className="flex gap-3 text-text-secondary text-sm leading-relaxed"
+                          className="flex items-start gap-3 text-text-secondary text-sm leading-relaxed"
                         >
-                          <span className="text-accent mt-1 flex-shrink-0">▸</span>
+                          <span className="text-accent leading-[1.4] flex-shrink-0 pt-[2px]">
+                            ▸
+                          </span>
                           <span>{b}</span>
                         </motion.li>
                       ))}
@@ -101,7 +123,9 @@ export default function Experience() {
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2">
                     {exp.tags.map((tag) => (
-                      <span key={tag} className="tag">{tag}</span>
+                      <span key={tag} className="tag">
+                        {tag}
+                      </span>
                     ))}
                   </div>
                 </div>

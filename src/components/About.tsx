@@ -40,7 +40,12 @@ function AnimatedCounter({ value, trigger }: { value: string; trigger: boolean }
 
   // Non-numeric values (e.g. "GPT-4o")
   if (num === 0) return <>{value}</>;
-  return <>{display}{suffix}</>;
+  return (
+    <>
+      {display}
+      {suffix}
+    </>
+  );
 }
 
 export default function About() {
@@ -59,34 +64,25 @@ export default function About() {
           className="flex items-center gap-4 mb-16"
         >
           <span className="font-mono text-accent text-sm tracking-widest">01.</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">About Me</h2>
-          <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent ml-4" />
+          <h2 className="text-3xl md:text-4xl font-bold theme-text">About Me</h2>
+          <div className="flex-1 h-px bg-gradient-to-r from-[rgba(var(--accent-rgb),0.22)] to-transparent ml-4" />
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Bio */}
           <div>
-            <motion.p
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              custom={1}
-              variants={fadeUp}
-              className="text-text-secondary text-lg leading-relaxed mb-6"
-            >
-              {profile.bio}
-            </motion.p>
-
-            <motion.p
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              custom={2}
-              variants={fadeUp}
-              className="text-text-secondary leading-relaxed mb-8"
-            >
-              With a background spanning Engineering (B.Tech from IIIT Chennai) to
-              Information Systems (MS from University of Maryland — Smith School of Business), I bring
-              a rare blend of engineering rigor and business context to every data problem.
-            </motion.p>
+            {profile.bio.split("\n\n").map((para, i) => (
+              <motion.p
+                key={i}
+                initial="hidden"
+                animate={inView ? "visible" : "hidden"}
+                custom={i + 1}
+                variants={fadeUp}
+                className={`text-text-secondary text-lg leading-relaxed ${i === 0 ? "text-lg mb-6" : "mb-8"}`}
+              >
+                {para}
+              </motion.p>
+            ))}
 
             <motion.div
               initial="hidden"
@@ -95,8 +91,23 @@ export default function About() {
               variants={fadeUp}
               className="flex flex-wrap gap-3"
             >
-              {["Python", "GCP Vertex AI", "LLMs / RAG", "MLOps", "SQL", "Tableau"].map((skill) => (
-                <span key={skill} className="tag">{skill}</span>
+              {[
+                "Agentic AI",
+                "Fine-Tuning",
+                "AI Security",
+                "LLMs",
+                "MLOps",
+                "AWS",
+                "RAG",
+                "Tableau",
+                "GenAI",
+                "Snowflake",
+                "OpenCV",
+                "Machine & Deep Learning",
+              ].map((skill) => (
+                <span key={skill} className="tag">
+                  {skill}
+                </span>
               ))}
             </motion.div>
           </div>
@@ -119,8 +130,12 @@ export default function About() {
                 className="glass rounded-2xl p-6 hover:border-accent/25 transition-colors duration-300 group"
               >
                 {/* Glow blob behind number */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ background: "radial-gradient(ellipse at top left, rgba(0,212,255,0.06) 0%, transparent 60%)" }}
+                <div
+                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background:
+                      "radial-gradient(ellipse at top left, rgba(var(--accent-rgb),0.08) 0%, transparent 60%)",
+                  }}
                 />
                 <div className="relative z-10 text-3xl font-black font-mono text-accent mb-1 tabular-nums">
                   <AnimatedCounter value={stat.value} trigger={inView} />
@@ -136,16 +151,23 @@ export default function About() {
               transition={{ delay: 0.7, duration: 0.5 }}
               className="col-span-2 glass rounded-2xl p-6 flex items-center gap-4 hover:border-accent/20 transition-colors duration-300"
             >
-              <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-lg flex-shrink-0"
-                style={{ border: "1px solid rgba(0,212,255,0.2)" }}>
+              <div
+                className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-lg flex-shrink-0"
+                style={{ border: "1px solid rgba(var(--accent-rgb),0.22)" }}
+              >
                 📍
               </div>
               <div>
-                <div className="text-white font-medium">United States</div>
+                <div className="theme-text font-medium">
+                  United States (Relocation within the US)
+                </div>
                 <div className="text-text-secondary text-sm">Open to Remote & Hybrid Roles</div>
               </div>
               <div className="ml-auto flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                <span
+                  className="w-2 h-2 rounded-full animate-pulse"
+                  style={{ background: "rgb(var(--accent-rgb))" }}
+                />
                 <span className="text-accent text-xs font-mono">Available</span>
               </div>
             </motion.div>

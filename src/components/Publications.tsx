@@ -17,7 +17,7 @@ export default function Publications() {
           className="flex items-center gap-4 mb-16"
         >
           <span className="font-mono text-accent text-sm tracking-widest">07.</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Publications</h2>
+          <h2 className="text-3xl md:text-4xl font-bold theme-text">Publications</h2>
           <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent ml-4" />
         </motion.div>
 
@@ -35,7 +35,7 @@ export default function Publications() {
 
               <div className="pl-6">
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                  <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors leading-snug max-w-2xl">
+                  <h3 className="text-xl font-bold theme-text group-hover:text-accent transition-colors leading-snug max-w-2xl">
                     {pub.title}
                   </h3>
                   <span className="flex-shrink-0 text-sm font-mono text-accent/80 px-3 py-1 rounded-lg border border-accent/20 bg-accent/5">
@@ -47,7 +47,9 @@ export default function Publications() {
 
                 <div className="flex flex-wrap gap-2">
                   {pub.tags.map((tag) => (
-                    <span key={tag} className="tag">{tag}</span>
+                    <span key={tag} className="tag">
+                      {tag}
+                    </span>
                   ))}
                 </div>
               </div>

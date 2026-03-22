@@ -8,7 +8,7 @@ const config: Config = {
         background: "#080808",
         surface: "#111111",
         border: "#1a1a1a",
-        accent: "#00d4ff",
+        accent: "var(--accent)",
         "accent-purple": "#7c3aed",
         "accent-pink": "#f43f5e",
         "accent-glow": "rgba(0, 212, 255, 0.15)",
@@ -35,8 +35,8 @@ const config: Config = {
           "50%": { transform: "translateY(-20px)" },
         },
         pulseGlow: {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(0,212,255,0.3)" },
-          "50%": { boxShadow: "0 0 50px rgba(0,212,255,0.7), 0 0 100px rgba(0,212,255,0.2)" },
+          "0%, 100%": { boxShadow: "0 0 20px rgba(var(--accent-rgb),0.3)" },
+          "50%": { boxShadow: "0 0 50px rgba(var(--accent-rgb), 0.7), 0 0 100px rgba(var(--accent-rgb), 0.2)" },
         },
         marquee: {
           from: { transform: "translateX(0)" },

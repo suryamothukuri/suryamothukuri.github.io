@@ -3,8 +3,8 @@
     "allow": [
       "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --no-git --yes)",
       "Read(//c/Program Files/**)",
-      "Read(//c/Users/rohit/AppData/Roaming/**)",
-      "Read(//c/Users/rohit/**)",
+      "Read(//c/Users/surya/AppData/Roaming/**)",
+      "Read(//c/Users/surya/**)",
       "Bash(cmd.exe /c \"where node 2>&1 && where npm 2>&1 && where npx 2>&1\")",
       "Bash(cmd.exe /c \"where node\")",
       "Bash(cmd.exe /c \"node --version\")",

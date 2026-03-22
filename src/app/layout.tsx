@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Rohit Ananthan | Data Scientist",
+  title: "Surya Mothukuri | Data Scientist",
   description:
-    "Data Scientist specializing in ML, GenAI, and MLOps. Building intelligent systems with Python, GCP, and LLMs.",
-  keywords: ["Rohit Ananthan", "Data Scientist", "Machine Learning", "GenAI", "MLOps", "Portfolio"],
-  authors: [{ name: "Rohit Ananthan" }],
+    "Data Scientist and AI Engineer building predictive models, data products, and scalable cloud workflows across healthcare, operations, and enterprise automation.",
+  keywords: ["Surya Teja Mothukuri", "Data Scientist", "Machine Learning", "GenAI", "MLOps", "Portfolio"],
+  authors: [{ name: "Surya Teja Mothukuri" }],
   openGraph: {
-    title: "Rohit Ananthan | Data Scientist",
-    description: "Building intelligent systems at the intersection of ML, GenAI & Data Engineering.",
+    title: "Surya Teja Mothukuri | Data Scientist",
+    description: "Data Scientist and AI Engineer building predictive models, data products, and scalable cloud workflows across healthcare, operations, and enterprise automation.",
     type: "website",
   },
 };

@@ -17,8 +17,8 @@ export default function Education() {
           className="flex items-center gap-4 mb-16"
         >
           <span className="font-mono text-accent text-sm tracking-widest">05.</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Education</h2>
-          <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent ml-4" />
+          <h2 className="text-3xl md:text-4xl font-bold theme-text">Education</h2>
+          <div className="flex-1 h-px bg-gradient-to-r from-[rgba(var(--accent-rgb),0.22)] to-transparent ml-4" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -39,14 +39,30 @@ export default function Education() {
 
               {/* Logo badge */}
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 font-bold text-white text-sm"
+                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 font-bold theme-text text-sm overflow-hidden"
                 style={{ background: `${edu.color}20`, border: `1px solid ${edu.color}40` }}
               >
-                {edu.logo}
+                {"logoImage" in edu && edu.logoImage ? (
+                  <img
+                    src={edu.logoImage}
+                    alt={`${edu.school} logo`}
+                    className="w-9 h-9 object-contain"
+                  />
+                ) : (
+                  edu.logo
+                )}
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-1 leading-snug">{edu.degree}</h3>
-              <p className="font-medium mb-1" style={{ color: edu.color }}>{edu.school}</p>
+              <div className="flex items-start justify-between gap-4 mb-1">
+                <h3 className="text-xl font-bold theme-text leading-snug">{edu.degree}</h3>
+                <span className="text-text-secondary text-xs md:text-sm font-mono whitespace-nowrap mt-1">
+                  {edu.period}
+                </span>
+              </div>
+
+              <p className="font-medium mb-1" style={{ color: edu.color }}>
+                {edu.school}
+              </p>
               <p className="text-text-secondary text-sm mb-1">{edu.subtitle}</p>
               <p className="text-text-secondary text-xs font-mono mb-5">📍 {edu.location}</p>
 

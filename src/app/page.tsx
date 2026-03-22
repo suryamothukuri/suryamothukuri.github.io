@@ -6,7 +6,6 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Education from "@/components/Education";
 import Certifications from "@/components/Certifications";
-import Publications from "@/components/Publications";
 import Contact from "@/components/Contact";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
@@ -17,8 +16,8 @@ export default function Home() {
     <>
       <CustomCursor />
       <ScrollProgress />
+      <Navigation />
       <SmoothScroll>
-        <Navigation />
         <main>
           <Hero />
           <About />
@@ -27,7 +26,6 @@ export default function Home() {
           <Projects />
           <Education />
           <Certifications />
-          <Publications />
           <Contact />
         </main>
       </SmoothScroll>

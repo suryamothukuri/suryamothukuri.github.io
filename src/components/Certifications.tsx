@@ -17,8 +17,8 @@ export default function Certifications() {
           className="flex items-center gap-4 mb-16"
         >
           <span className="font-mono text-accent text-sm tracking-widest">06.</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Certifications</h2>
-          <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent ml-4" />
+          <h2 className="text-3xl md:text-4xl font-bold theme-text">Certifications</h2>
+          <div className="flex-1 h-px bg-gradient-to-r from-[rgba(var(--accent-rgb),0.22)] to-transparent ml-4" />
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -47,14 +47,18 @@ export default function Certifications() {
                 {cert.icon}
               </div>
 
-              <h3 className="text-white font-semibold leading-snug mb-2">{cert.name}</h3>
+              <h3 className="theme-text font-semibold leading-snug mb-2">{cert.name}</h3>
               <p className="text-text-secondary text-sm mb-4">{cert.issuer}</p>
 
               {/* Footer */}
               <div className="flex items-center justify-between">
                 <span
                   className="text-xs font-mono px-2 py-1 rounded"
-                  style={{ color: cert.color, background: `${cert.color}10`, border: `1px solid ${cert.color}20` }}
+                  style={{
+                    color: cert.color,
+                    background: `${cert.color}10`,
+                    border: `1px solid ${cert.color}20`,
+                  }}
                 >
                   Issued {cert.date}
                 </span>

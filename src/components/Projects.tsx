@@ -18,8 +18,8 @@ export default function Projects() {
           className="flex items-center gap-4 mb-16"
         >
           <span className="font-mono text-accent text-sm tracking-widest">04.</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Projects</h2>
-          <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent ml-4" />
+          <h2 className="text-3xl md:text-4xl font-bold theme-text">Projects</h2>
+          <div className="flex-1 h-px bg-gradient-to-r from-[rgba(var(--accent-rgb),0.22)] to-transparent ml-4" />
         </motion.div>
 
         {/* Grid */}
@@ -76,7 +76,10 @@ function TiltCard({
         <div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
           style={{
-            background: `radial-gradient(ellipse at top left, ${project.color}12 0%, transparent 60%)`,
+            background:
+              project.color === "var(--accent)"
+                ? "radial-gradient(ellipse at top left, rgba(var(--accent-rgb), 0.08) 0%, transparent 60%)"
+                : `radial-gradient(ellipse at top left, ${project.color}14 0%, transparent 60%)`,
           }}
         />
 
@@ -86,7 +89,13 @@ function TiltCard({
           animate={inView ? { scaleX: 1 } : {}}
           transition={{ delay: 0.4 + i * 0.12, duration: 0.7 }}
           className="absolute top-0 left-6 right-6 h-[1.5px] origin-left rounded-full"
-          style={{ background: `linear-gradient(90deg, ${project.color}80, transparent)` }}
+          style={{
+            background:
+              project.color === "var(--accent)"
+                ? "linear-gradient(90deg, rgba(var(--accent-rgb), 0.55), transparent)"
+                : `linear-gradient(90deg, ${project.color}, transparent)`,
+            opacity: 0.9,
+          }}
         />
 
         {/* Top row — icon + github */}
@@ -102,7 +111,7 @@ function TiltCard({
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="text-text-secondary hover:text-white transition-all duration-200 p-2 -mr-2 -mt-2 opacity-50 group-hover:opacity-100"
+            className="text-text-secondary hover:theme-text transition-all duration-200 p-2 -mr-2 -mt-2 opacity-50 group-hover:opacity-100"
             aria-label="GitHub"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -113,7 +122,7 @@ function TiltCard({
 
         {/* Title + description */}
         <div className="relative z-10">
-          <h3 className="text-lg font-bold text-white mb-2">{project.title}</h3>
+          <h3 className="text-lg font-bold theme-text mb-2">{project.title}</h3>
           <p className="text-text-secondary text-sm leading-relaxed">{project.description}</p>
         </div>
 
@@ -122,11 +131,12 @@ function TiltCard({
           {project.highlights.map((h) => (
             <span
               key={h}
-              className="text-xs font-mono px-2.5 py-1 rounded-full"
+              className="text-xs font-mono px-2.5 py-1 rounded-full border"
               style={{
-                background: `${project.color}15`,
+                background: `${project.color}10`,
                 color: project.color,
-                border: `1px solid ${project.color}30`,
+                borderColor: `${project.color}66`,
+                boxShadow: `0 0 0 1px ${project.color}12 inset`,
               }}
             >
               {h}
@@ -135,9 +145,11 @@ function TiltCard({
         </div>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 pt-3 border-t border-white/5 mt-auto relative z-10">
+        <div className="flex flex-wrap gap-2 pt-3 border-t theme-border mt-auto relative z-10">
           {project.tags.map((tag) => (
-            <span key={tag} className="tag">{tag}</span>
+            <span key={tag} className="tag">
+              {tag}
+            </span>
           ))}
         </div>
       </div>
