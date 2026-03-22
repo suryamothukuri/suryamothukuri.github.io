@@ -5,11 +5,24 @@ export const metadata: Metadata = {
   title: "Surya Mothukuri | Data Scientist",
   description:
     "Data Scientist and AI Engineer building predictive models, data products, and scalable cloud workflows across healthcare, operations, and enterprise automation.",
-  keywords: ["Surya Teja Mothukuri", "Data Scientist", "Machine Learning", "GenAI", "MLOps", "Portfolio"],
+  keywords: [
+    "Surya Teja Mothukuri",
+    "Data Scientist",
+    "Machine Learning",
+    "GenAI",
+    "MLOps",
+    "Portfolio",
+  ],
   authors: [{ name: "Surya Teja Mothukuri" }],
+  icons: {
+    icon: "/favicon.png?v=3",
+    shortcut: "/favicon.png?v=3",
+    apple: "/favicon.png?v=3",
+  },
   openGraph: {
     title: "Surya Teja Mothukuri | Data Scientist",
-    description: "Data Scientist and AI Engineer building predictive models, data products, and scalable cloud workflows across healthcare, operations, and enterprise automation.",
+    description:
+      "Data Scientist and AI Engineer building predictive models, data products, and scalable cloud workflows across healthcare, operations, and enterprise automation.",
     type: "website",
   },
 };
