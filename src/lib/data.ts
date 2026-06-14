@@ -4,9 +4,9 @@ export const profile = {
   title: "Data Scientist & ML Engineer",
   tagline:
     "Building End-to-End ML and GenAI Systems Across Healthcare and Operations",
-  bio: `I build ML and GenAI systems that ship — owning the full lifecycle from raw, multi-source data to production-ready models. My work spans classical ML and modern GenAI: demand forecasting ensembles, clinical risk models with calibration-aware thresholding, RAG pipelines, agentic workflows, and LoRA fine-tuned LLMs. I work across the full stack — feature engineering, experiment tracking in MLflow, SHAP-based interpretability, ETL pipelines with dbt, and containerized deployment with Docker. I care about models that don't just perform on paper — they integrate into real workflows, explain their reasoning to non-technical stakeholders, and drive decisions at scale. Whether it's a healthcare system that needs calibrated risk scores or an operations team that needs real-time forecasts, I build for the use case, not just the benchmark.
+  bio: `I build ML and GenAI systems that ship - owning the full lifecycle from raw, multi-source data to production-ready models. My work spans classical ML and modern GenAI: demand forecasting ensembles, clinical risk models with calibration-aware thresholding, RAG pipelines, agentic workflows, and LoRA fine-tuned LLMs. I work across the full stack — feature engineering, experiment tracking in MLflow, SHAP-based interpretability, ETL pipelines with dbt, and containerized deployment with Docker. I care about models that don't just perform on paper — they integrate into real workflows, explain their reasoning to non-technical stakeholders, and drive decisions at scale. Whether it's a healthcare system that needs calibrated risk scores or an operations team that needs real-time forecasts, I build for the use case, not just the benchmark.
 
-That approach has delivered measurable results across every role I've held. At Indiana University, an XGBoost + ARIMA demand forecasting pipeline across 10M+ transactions cut procurement spend by 18%, saving ~$1.7M annually — built end-to-end from ETL design to Power BI dashboards adopted by 10+ operational stakeholders. At IU School of Medicine, a clinical ML pipeline across 90k+ surgical encounters achieved AUROC 0.82 with strong calibration (Brier 0.14), with Optuna-tuned thresholding boosting high-risk patient recall by 23% at fixed precision. At TCS, 15 automated Python + PowerShell workflows eliminated 180 staff hours monthly while a GitLab CI/CD pipeline reduced reporting rework by 25%. At Ford, a CycleGAN + ResNet-50 computer vision system hit 0.91 recall across 300k+ production images, cutting false negatives by 50%.`,
+That approach has delivered measurable results across every role I've held. At Indiana University, an XGBoost + ARIMA demand forecasting pipeline across 10M+ transactions cut procurement spend by 18%, saving ~$1.7M annually, built end-to-end from ETL design to Power BI dashboards adopted by 10+ operational stakeholders. At IU School of Medicine, a clinical ML pipeline across 90k+ surgical encounters achieved AUROC 0.82 with strong calibration (Brier 0.14), with Optuna-tuned thresholding boosting high-risk patient recall by 23% at fixed precision. At TCS, 15 automated Python + PowerShell workflows eliminated 180 staff hours monthly while a GitLab CI/CD pipeline reduced reporting rework by 25%. At Ford, a CycleGAN + ResNet-50 computer vision system hit 0.91 recall across 300k+ production images, cutting false negatives by 50%.`,
   location: "Indianapolis, IN (Open to Relocation)",
   email: "suryamothuk23@gmail.com",
   linkedin: "https://www.linkedin.com/in/surya-mothukuri/",
@@ -14,10 +14,10 @@ That approach has delivered measurable results across every role I've held. At I
 };
 
 export const stats = [
-  { value: "$1.7M", label: "Annual Savings Delivered" },
-  { value: "90k+", label: "Clinical Encounters Modeled" },
-  { value: "10M+", label: "Records Processed" },
-  { value: "180hrs", label: "Monthly Effort Saved" },
+  { value: "18%↓", label: "Procurement Reduced" },
+  { value: "300k+", label: "Manufacturing Images Processed" },
+  { value: "10M+", label: "Transactions Forecasted" },
+  { value: "3.91", label: "GPA @ IU Bloomington" },
 ];
 
 export const experiences = [
@@ -257,7 +257,7 @@ export const projects = [
     tags: ["Python", "statsmodels", "VADER", "NLP", "Regression", "Feature Engineering"],
     color: "#f59e0b",
     icon: "🛍️",
-    github: "https://github.com/suryamothukuri",
+    github: "https://github.com/suryamothukuri/Etsy-Retail-Marketing-Analysis",
     highlights: ["20-model OLS framework", "R² = 0.148", "10,406 listings analyzed"],
     period: "Jan 2025 – May 2025",
   },
