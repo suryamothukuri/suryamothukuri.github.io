@@ -497,7 +497,6 @@ export default function Hero() {
             { v: "180 hrs", l: "MONTHLY EFFORT SAVED" },
             { v: "90k+", l: "CLINICAL ENCOUNTERS" },
             { v: "3+", l: "years exp" },
-            ,
           ].map((s) => (
             <div key={s.l} className="text-center group">
               <div className="text-2xl font-bold text-accent font-mono group-hover:text-glow transition-all duration-300">
